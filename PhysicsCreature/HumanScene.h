@@ -1,5 +1,5 @@
 //
-//  MyScene.h
+//  HumanScene.h
 //  PhysicsCreature
 //
 
@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MyScene : SKScene
+@interface HumanScene : SKScene
 
 @end

@@ -17,7 +17,7 @@
 		E11871AD18B58CE20065DA27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871AC18B58CE20065DA27 /* AppDelegate.m */; };
 		E11871B018B58CE20065DA27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11871AE18B58CE20065DA27 /* Main.storyboard */; };
 		E11871B318B58CE30065DA27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871B218B58CE30065DA27 /* ViewController.m */; };
-		E11871B618B58CE30065DA27 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871B518B58CE30065DA27 /* MyScene.m */; };
+		E11871B618B58CE30065DA27 /* HumanScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871B518B58CE30065DA27 /* HumanScene.m */; };
 		E11871B818B58CE30065DA27 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E11871B718B58CE30065DA27 /* Spaceship.png */; };
 		E11871BA18B58CE30065DA27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11871B918B58CE30065DA27 /* Images.xcassets */; };
 		E11871C118B58CE30065DA27 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11871C018B58CE30065DA27 /* XCTest.framework */; };
@@ -54,8 +54,8 @@
 		E11871AF18B58CE20065DA27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E11871B118B58CE30065DA27 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E11871B218B58CE30065DA27 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E11871B418B58CE30065DA27 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		E11871B518B58CE30065DA27 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		E11871B418B58CE30065DA27 /* HumanScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanScene.h; sourceTree = "<group>"; };
+		E11871B518B58CE30065DA27 /* HumanScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HumanScene.m; sourceTree = "<group>"; };
 		E11871B718B58CE30065DA27 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E11871B918B58CE30065DA27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E11871BF18B58CE30065DA27 /* PhysicsCreatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicsCreatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +129,8 @@
 				E11871AE18B58CE20065DA27 /* Main.storyboard */,
 				E11871B118B58CE30065DA27 /* ViewController.h */,
 				E11871B218B58CE30065DA27 /* ViewController.m */,
-				E11871B418B58CE30065DA27 /* MyScene.h */,
-				E11871B518B58CE30065DA27 /* MyScene.m */,
+				E11871B418B58CE30065DA27 /* HumanScene.h */,
+				E11871B518B58CE30065DA27 /* HumanScene.m */,
 				E11871B718B58CE30065DA27 /* Spaceship.png */,
 				E11871B918B58CE30065DA27 /* Images.xcassets */,
 				E11871A318B58CE20065DA27 /* Supporting Files */,
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E11871B618B58CE30065DA27 /* MyScene.m in Sources */,
+				E11871B618B58CE30065DA27 /* HumanScene.m in Sources */,
 				E11871B318B58CE30065DA27 /* ViewController.m in Sources */,
 				E11871AD18B58CE20065DA27 /* AppDelegate.m in Sources */,
 				E11871A918B58CE20065DA27 /* main.m in Sources */,

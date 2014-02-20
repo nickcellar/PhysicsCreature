@@ -1,14 +1,14 @@
 //
-//  MyScene.m
+//  HumanScene.m
 //  PhysicsCreature
 //
 //  Created by Nicholas Wong on 2/19/14.
 //  Copyright (c) 2014 Nicholas Workshop. All rights reserved.
 //
 
-#import "MyScene.h"
+#import "HumanScene.h"
 
-@interface MyScene ()
+@interface HumanScene ()
 @property SKShapeNode *head;
 @property SKSpriteNode *leftHand;
 @property SKSpriteNode *rightHand;
@@ -29,7 +29,7 @@
 @property SKShapeNode *rightLeg;
 @end
 
-@implementation MyScene
+@implementation HumanScene
 
 - (void)activateJointRope
 {

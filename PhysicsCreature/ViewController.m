@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "HumanScene.h"
 #import "SnakeScene.h"
 
 @implementation ViewController

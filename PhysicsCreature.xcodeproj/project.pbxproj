@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E118719B18B58CE20065DA27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E118719A18B58CE20065DA27 /* Foundation.framework */; };
+		E118719D18B58CE20065DA27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E118719C18B58CE20065DA27 /* CoreGraphics.framework */; };
+		E118719F18B58CE20065DA27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E118719E18B58CE20065DA27 /* UIKit.framework */; };
+		E11871A118B58CE20065DA27 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11871A018B58CE20065DA27 /* SpriteKit.framework */; };
+		E11871A718B58CE20065DA27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11871A518B58CE20065DA27 /* InfoPlist.strings */; };
+		E11871A918B58CE20065DA27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871A818B58CE20065DA27 /* main.m */; };
+		E11871AD18B58CE20065DA27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871AC18B58CE20065DA27 /* AppDelegate.m */; };
+		E11871B018B58CE20065DA27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11871AE18B58CE20065DA27 /* Main.storyboard */; };
+		E11871B318B58CE30065DA27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871B218B58CE30065DA27 /* ViewController.m */; };
+		E11871B618B58CE30065DA27 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871B518B58CE30065DA27 /* MyScene.m */; };
+		E11871B818B58CE30065DA27 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E11871B718B58CE30065DA27 /* Spaceship.png */; };
+		E11871BA18B58CE30065DA27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11871B918B58CE30065DA27 /* Images.xcassets */; };
+		E11871C118B58CE30065DA27 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11871C018B58CE30065DA27 /* XCTest.framework */; };
+		E11871C218B58CE30065DA27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E118719A18B58CE20065DA27 /* Foundation.framework */; };
+		E11871C318B58CE30065DA27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E118719E18B58CE20065DA27 /* UIKit.framework */; };
+		E11871CB18B58CE30065DA27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11871C918B58CE30065DA27 /* InfoPlist.strings */; };
+		E11871CD18B58CE30065DA27 /* PhysicsCreatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E11871CC18B58CE30065DA27 /* PhysicsCreatureTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E11871C418B58CE30065DA27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E118718F18B58CE20065DA27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E118719618B58CE20065DA27;
+			remoteInfo = PhysicsCreature;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E118719718B58CE20065DA27 /* PhysicsCreature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsCreature.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E118719A18B58CE20065DA27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E118719C18B58CE20065DA27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E118719E18B58CE20065DA27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E11871A018B58CE20065DA27 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		E11871A418B58CE20065DA27 /* PhysicsCreature-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhysicsCreature-Info.plist"; sourceTree = "<group>"; };
+		E11871A618B58CE20065DA27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E11871A818B58CE20065DA27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E11871AA18B58CE20065DA27 /* PhysicsCreature-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhysicsCreature-Prefix.pch"; sourceTree = "<group>"; };
+		E11871AB18B58CE20065DA27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E11871AC18B58CE20065DA27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E11871AF18B58CE20065DA27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E11871B118B58CE30065DA27 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E11871B218B58CE30065DA27 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E11871B418B58CE30065DA27 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		E11871B518B58CE30065DA27 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		E11871B718B58CE30065DA27 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		E11871B918B58CE30065DA27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E11871BF18B58CE30065DA27 /* PhysicsCreatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicsCreatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11871C018B58CE30065DA27 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E11871C818B58CE30065DA27 /* PhysicsCreatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhysicsCreatureTests-Info.plist"; sourceTree = "<group>"; };
+		E11871CA18B58CE30065DA27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E11871CC18B58CE30065DA27 /* PhysicsCreatureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicsCreatureTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E118719418B58CE20065DA27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E118719D18B58CE20065DA27 /* CoreGraphics.framework in Frameworks */,
+				E118719F18B58CE20065DA27 /* UIKit.framework in Frameworks */,
+				E11871A118B58CE20065DA27 /* SpriteKit.framework in Frameworks */,
+				E118719B18B58CE20065DA27 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E11871BC18B58CE30065DA27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11871C118B58CE30065DA27 /* XCTest.framework in Frameworks */,
+				E11871C318B58CE30065DA27 /* UIKit.framework in Frameworks */,
+				E11871C218B58CE30065DA27 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E118718E18B58CE20065DA27 = {
+			isa = PBXGroup;
+			children = (
+				E11871A218B58CE20065DA27 /* PhysicsCreature */,
+				E11871C618B58CE30065DA27 /* PhysicsCreatureTests */,
+				E118719918B58CE20065DA27 /* Frameworks */,
+				E118719818B58CE20065DA27 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E118719818B58CE20065DA27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E118719718B58CE20065DA27 /* PhysicsCreature.app */,
+				E11871BF18B58CE30065DA27 /* PhysicsCreatureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E118719918B58CE20065DA27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E118719A18B58CE20065DA27 /* Foundation.framework */,
+				E118719C18B58CE20065DA27 /* CoreGraphics.framework */,
+				E118719E18B58CE20065DA27 /* UIKit.framework */,
+				E11871A018B58CE20065DA27 /* SpriteKit.framework */,
+				E11871C018B58CE30065DA27 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11871A218B58CE20065DA27 /* PhysicsCreature */ = {
+			isa = PBXGroup;
+			children = (
+				E11871AB18B58CE20065DA27 /* AppDelegate.h */,
+				E11871AC18B58CE20065DA27 /* AppDelegate.m */,
+				E11871AE18B58CE20065DA27 /* Main.storyboard */,
+				E11871B118B58CE30065DA27 /* ViewController.h */,
+				E11871B218B58CE30065DA27 /* ViewController.m */,
+				E11871B418B58CE30065DA27 /* MyScene.h */,
+				E11871B518B58CE30065DA27 /* MyScene.m */,
+				E11871B718B58CE30065DA27 /* Spaceship.png */,
+				E11871B918B58CE30065DA27 /* Images.xcassets */,
+				E11871A318B58CE20065DA27 /* Supporting Files */,
+			);
+			path = PhysicsCreature;
+			sourceTree = "<group>";
+		};
+		E11871A318B58CE20065DA27 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E11871A418B58CE20065DA27 /* PhysicsCreature-Info.plist */,
+				E11871A518B58CE20065DA27 /* InfoPlist.strings */,
+				E11871A818B58CE20065DA27 /* main.m */,
+				E11871AA18B58CE20065DA27 /* PhysicsCreature-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E11871C618B58CE30065DA27 /* PhysicsCreatureTests */ = {
+			isa = PBXGroup;
+			children = (
+				E11871CC18B58CE30065DA27 /* PhysicsCreatureTests.m */,
+				E11871C718B58CE30065DA27 /* Supporting Files */,
+			);
+			path = PhysicsCreatureTests;
+			sourceTree = "<group>";
+		};
+		E11871C718B58CE30065DA27 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E11871C818B58CE30065DA27 /* PhysicsCreatureTests-Info.plist */,
+				E11871C918B58CE30065DA27 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E118719618B58CE20065DA27 /* PhysicsCreature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E11871D018B58CE30065DA27 /* Build configuration list for PBXNativeTarget "PhysicsCreature" */;
+			buildPhases = (
+				E118719318B58CE20065DA27 /* Sources */,
+				E118719418B58CE20065DA27 /* Frameworks */,
+				E118719518B58CE20065DA27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhysicsCreature;
+			productName = PhysicsCreature;
+			productReference = E118719718B58CE20065DA27 /* PhysicsCreature.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E11871BE18B58CE30065DA27 /* PhysicsCreatureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E11871D318B58CE30065DA27 /* Build configuration list for PBXNativeTarget "PhysicsCreatureTests" */;
+			buildPhases = (
+				E11871BB18B58CE30065DA27 /* Sources */,
+				E11871BC18B58CE30065DA27 /* Frameworks */,
+				E11871BD18B58CE30065DA27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E11871C518B58CE30065DA27 /* PBXTargetDependency */,
+			);
+			name = PhysicsCreatureTests;
+			productName = PhysicsCreatureTests;
+			productReference = E11871BF18B58CE30065DA27 /* PhysicsCreatureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E118718F18B58CE20065DA27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Nicholas Workshop";
+				TargetAttributes = {
+					E11871BE18B58CE30065DA27 = {
+						TestTargetID = E118719618B58CE20065DA27;
+					};
+				};
+			};
+			buildConfigurationList = E118719218B58CE20065DA27 /* Build configuration list for PBXProject "PhysicsCreature" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E118718E18B58CE20065DA27;
+			productRefGroup = E118719818B58CE20065DA27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E118719618B58CE20065DA27 /* PhysicsCreature */,
+				E11871BE18B58CE30065DA27 /* PhysicsCreatureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E118719518B58CE20065DA27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11871A718B58CE20065DA27 /* InfoPlist.strings in Resources */,
+				E11871BA18B58CE30065DA27 /* Images.xcassets in Resources */,
+				E11871B818B58CE30065DA27 /* Spaceship.png in Resources */,
+				E11871B018B58CE20065DA27 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E11871BD18B58CE30065DA27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11871CB18B58CE30065DA27 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E118719318B58CE20065DA27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11871B618B58CE30065DA27 /* MyScene.m in Sources */,
+				E11871B318B58CE30065DA27 /* ViewController.m in Sources */,
+				E11871AD18B58CE20065DA27 /* AppDelegate.m in Sources */,
+				E11871A918B58CE20065DA27 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E11871BB18B58CE30065DA27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11871CD18B58CE30065DA27 /* PhysicsCreatureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E11871C518B58CE30065DA27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E118719618B58CE20065DA27 /* PhysicsCreature */;
+			targetProxy = E11871C418B58CE30065DA27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E11871A518B58CE20065DA27 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E11871A618B58CE20065DA27 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E11871AE18B58CE20065DA27 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E11871AF18B58CE20065DA27 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E11871C918B58CE30065DA27 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E11871CA18B58CE30065DA27 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E11871CE18B58CE30065DA27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E11871CF18B58CE30065DA27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E11871D118B58CE30065DA27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsCreature/PhysicsCreature-Prefix.pch";
+				INFOPLIST_FILE = "PhysicsCreature/PhysicsCreature-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E11871D218B58CE30065DA27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsCreature/PhysicsCreature-Prefix.pch";
+				INFOPLIST_FILE = "PhysicsCreature/PhysicsCreature-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E11871D418B58CE30065DA27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhysicsCreature.app/PhysicsCreature";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsCreature/PhysicsCreature-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhysicsCreatureTests/PhysicsCreatureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E11871D518B58CE30065DA27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhysicsCreature.app/PhysicsCreature";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsCreature/PhysicsCreature-Prefix.pch";
+				INFOPLIST_FILE = "PhysicsCreatureTests/PhysicsCreatureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E118719218B58CE20065DA27 /* Build configuration list for PBXProject "PhysicsCreature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E11871CE18B58CE30065DA27 /* Debug */,
+				E11871CF18B58CE30065DA27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E11871D018B58CE30065DA27 /* Build configuration list for PBXNativeTarget "PhysicsCreature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E11871D118B58CE30065DA27 /* Debug */,
+				E11871D218B58CE30065DA27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E11871D318B58CE30065DA27 /* Build configuration list for PBXNativeTarget "PhysicsCreatureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E11871D418B58CE30065DA27 /* Debug */,
+				E11871D518B58CE30065DA27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E118718F18B58CE20065DA27 /* Project object */;
+}

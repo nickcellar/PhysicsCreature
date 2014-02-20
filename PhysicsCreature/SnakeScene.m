@@ -14,7 +14,7 @@
 
 @implementation SnakeScene
 
-- (void)spawnNodes
+- (void)spawnSnake
 {
     SKShapeNode *lastNode = NULL;
     float lastRadius = 1;
@@ -29,17 +29,16 @@
         CGPathAddArc(path, NULL, 0, 0, radius, 0, (float) M_PI * 2, YES);
         [node setPath:path];
         [node setFillColor:[UIColor blueColor]];
-        [node setLineWidth:interval / 2];
-        [node setStrokeColor:[UIColor blackColor]];
+        [node setLineWidth:0];
 
         // calculate the node position
         float y = self.size.height / 4;
         if (lastNode) y = lastNode.position.y + lastRadius + radius + interval;
-        [node setPosition:CGPointMake(self.size.width / 2, y)];
+        [node setPosition:CGPointMake(self.size.width / 4*3, y)];
 
         // set up physics body
         [node setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:radius]];
-        [node.physicsBody setRestitution:1];
+        [node.physicsBody setRestitution:.5];
         [self addChild:node];
 
         // add joints
@@ -61,13 +60,23 @@
     _head = lastNode;
 }
 
+- (void)spawnShelf
+{
+    SKSpriteNode *shelf = [SKSpriteNode spriteNodeWithColor:[SKColor lightGrayColor] size:CGSizeMake(100, 40)];
+    shelf.position = CGPointMake(self.size.width / 2.5, self.size.height / 2);
+    shelf.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:shelf.size];
+    [shelf.physicsBody setDynamic:NO];
+    [self addChild:shelf];
+}
+
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
         self.scaleMode = SKSceneScaleModeAspectFit;
         [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
         [self.physicsBody setRestitution:.5];
-        [self spawnNodes];
+        [self spawnSnake];
+        [self spawnShelf];
     }
     return self;
 }

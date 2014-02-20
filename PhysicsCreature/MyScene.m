@@ -9,56 +9,115 @@
 #import "MyScene.h"
 
 @interface MyScene ()
-@property SKSpriteNode *mySquare1;
-@property SKSpriteNode *mySquare2;
-@property SKSpriteNode *mySquare3;
-@property SKSpriteNode *mySquare4;
+@property SKSpriteNode *head;
+@property SKSpriteNode *leftHand;
+@property SKSpriteNode *rightHand;
+@property SKSpriteNode *waist;
+@property SKSpriteNode *leftFoot;
+@property SKSpriteNode *rightFoot;
 @property SKSpriteNode *myShelf;
-@property SKPhysicsJoint *myRopeJoint;
-@property SKPhysicsJoint *myRopeJoint1;
-@property SKPhysicsJoint *myRopeJoint2;
+@property SKPhysicsJoint *leftArmJoint;
+@property SKPhysicsJoint *rightArmJoint;
+@property SKPhysicsJoint *leftLegJoint;
+@property SKPhysicsJoint *rightLegJoint;
+@property SKPhysicsJoint *backBoneJoint;
+@property SKPhysicsJointSpring *handSpringJoint;
+@property SKPhysicsJointSpring *leftSupportSpringJoint;
+@property SKPhysicsJointSpring *rightSupportSpringJoint;
 @end
 
 @implementation MyScene
 
 - (void)activateJointRope
 {
-    _myRopeJoint = [SKPhysicsJointLimit jointWithBodyA:_mySquare1.physicsBody bodyB:_mySquare2.physicsBody anchorA:_mySquare1.position anchorB:_mySquare2.position];
-    [self.physicsWorld addJoint:_myRopeJoint];
+    _leftArmJoint = [SKPhysicsJointLimit jointWithBodyA:_head.physicsBody
+                                                  bodyB:_leftHand.physicsBody
+                                                anchorA:_head.position
+                                                anchorB:_leftHand.position];
 
-    _myRopeJoint1 = [SKPhysicsJointLimit jointWithBodyA:_mySquare2.physicsBody bodyB:_mySquare3.physicsBody anchorA:_mySquare2.position anchorB:_mySquare3.position];
-    [self.physicsWorld addJoint:_myRopeJoint1];
+    _rightArmJoint = [SKPhysicsJointLimit jointWithBodyA:_head.physicsBody
+                                                   bodyB:_rightHand.physicsBody
+                                                 anchorA:_head.position
+                                                 anchorB:_rightHand.position];
 
-    _myRopeJoint2 = [SKPhysicsJointLimit jointWithBodyA:_mySquare3.physicsBody bodyB:_mySquare4.physicsBody anchorA:_mySquare3.position anchorB:_mySquare4.position];
-    [self.physicsWorld addJoint:_myRopeJoint2];
+    _backBoneJoint = [SKPhysicsJointLimit jointWithBodyA:_head.physicsBody
+                                                   bodyB:_waist.physicsBody
+                                                 anchorA:_head.position
+                                                 anchorB:_waist.position];
+
+    _leftLegJoint = [SKPhysicsJointLimit jointWithBodyA:_waist.physicsBody
+                                                  bodyB:_leftFoot.physicsBody
+                                                anchorA:_waist.position
+                                                anchorB:_leftFoot.position];
+
+    _rightLegJoint = [SKPhysicsJointLimit jointWithBodyA:_waist.physicsBody
+                                                   bodyB:_rightFoot.physicsBody
+                                                 anchorA:_waist.position
+                                                 anchorB:_rightFoot.position];
+
+    _handSpringJoint = [SKPhysicsJointSpring jointWithBodyA:_leftHand.physicsBody
+                                                      bodyB:_rightHand.physicsBody
+                                                    anchorA:_leftHand.position
+                                                    anchorB:_rightHand.position];
+
+    _leftSupportSpringJoint = [SKPhysicsJointSpring jointWithBodyA:_head.physicsBody
+                                                             bodyB:_leftFoot.physicsBody
+                                                           anchorA:_head.position
+                                                           anchorB:_leftFoot.position];
+
+    _rightSupportSpringJoint = [SKPhysicsJointSpring jointWithBodyA:_head.physicsBody
+                                                              bodyB:_rightFoot.physicsBody
+                                                            anchorA:_head.position
+                                                            anchorB:_rightFoot.position];
+
+    [self.physicsWorld addJoint:_leftArmJoint];
+    [self.physicsWorld addJoint:_rightArmJoint];
+    [self.physicsWorld addJoint:_backBoneJoint];
+    [self.physicsWorld addJoint:_leftLegJoint];
+    [self.physicsWorld addJoint:_rightLegJoint];
+    [self.physicsWorld addJoint:_handSpringJoint];
+    [self.physicsWorld addJoint:_leftSupportSpringJoint];
+    [self.physicsWorld addJoint:_rightSupportSpringJoint];
 }
 
 - (void)spawnSquares
 {
-    _mySquare1 = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(70, 70)];
-    _mySquare2 = [[SKSpriteNode alloc] initWithColor:[SKColor purpleColor] size:CGSizeMake(70, 70)];
-    _mySquare3 = [[SKSpriteNode alloc] initWithColor:[SKColor orangeColor] size:CGSizeMake(70, 70)];
-    _mySquare4 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(70, 70)];
+    _head = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(70, 70)];
+    _leftHand = [[SKSpriteNode alloc] initWithColor:[SKColor purpleColor] size:CGSizeMake(70, 70)];
+    _rightHand = [[SKSpriteNode alloc] initWithColor:[SKColor orangeColor] size:CGSizeMake(70, 70)];
+    _waist = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(70, 70)];
+    _leftFoot = [[SKSpriteNode alloc] initWithColor:[SKColor purpleColor] size:CGSizeMake(70, 70)];
+    _rightFoot = [[SKSpriteNode alloc] initWithColor:[SKColor orangeColor] size:CGSizeMake(70, 70)];
 
-    [_mySquare1 setPosition:CGPointMake(self.size.width / 1.5, self.size.height / 1.5)];
-    [_mySquare2 setPosition:CGPointMake(self.size.width / 1.5, self.size.height / 2)];
-    [_mySquare3 setPosition:CGPointMake(self.size.width / 1.5, self.size.height / 2.5)];
-    [_mySquare4 setPosition:CGPointMake(self.size.width / 1.5, self.size.height / 3)];
+    [_head setPosition:CGPointMake(self.size.width / 2, self.size.height / 4 * 3)];
+    [_leftHand setPosition:CGPointMake(self.size.width / 4, self.size.height / 2)];
+    [_rightHand setPosition:CGPointMake(self.size.width / 4 * 3, self.size.height / 2)];
+    [_waist setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
+    [_leftFoot setPosition:CGPointMake(self.size.width / 4, self.size.height / 4)];
+    [_rightFoot setPosition:CGPointMake(self.size.width / 4 * 3, self.size.height / 4)];
 
-    _mySquare1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_mySquare1.size];
-    _mySquare2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_mySquare2.size];
-    _mySquare3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_mySquare3.size];
-    _mySquare4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_mySquare4.size];
+    _head.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_head.size];
+    _leftHand.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_leftHand.size];
+    _rightHand.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_rightHand.size];
+    _waist.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_waist.size];
+    _leftFoot.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_leftFoot.size];
+    _rightFoot.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_rightFoot.size];
 
-    [_mySquare1.physicsBody setRestitution:1.0];
-    [_mySquare2.physicsBody setRestitution:1.0];
-    [_mySquare3.physicsBody setRestitution:1.0];
-    [_mySquare4.physicsBody setRestitution:1.0];
+    [_head.physicsBody setRestitution:1.0];
+    [_leftHand.physicsBody setRestitution:1.0];
+    [_rightHand.physicsBody setRestitution:1.0];
+    [_waist.physicsBody setRestitution:1.0];
+    [_leftFoot.physicsBody setRestitution:1.0];
+    [_rightFoot.physicsBody setRestitution:1.0];
 
-    [self addChild:_mySquare1];
-    [self addChild:_mySquare2];
-    [self addChild:_mySquare3];
-    [self addChild:_mySquare4];
+    [_head.physicsBody setDynamic:NO];
+
+    [self addChild:_head];
+    [self addChild:_leftHand];
+    [self addChild:_rightHand];
+    [self addChild:_waist];
+    [self addChild:_leftFoot];
+    [self addChild:_rightFoot];
 }
 
 - (void)makeShelf
@@ -78,19 +137,19 @@
         [self.physicsBody setRestitution:1];
         [self spawnSquares];
         [self activateJointRope];
-        [self makeShelf];
+//        [self makeShelf];
     }
     return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (_mySquare1.physicsBody.dynamic) {
-        [_mySquare1.physicsBody setDynamic:NO];
+    if (_head.physicsBody.dynamic) {
+        [_head.physicsBody setDynamic:NO];
     }
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [_mySquare1 setPosition:location];
+        [_head setPosition:location];
     }
 }
 
@@ -98,21 +157,21 @@
 {
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [_mySquare1 setPosition:location];
+        [_head setPosition:location];
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (!_mySquare1.physicsBody.dynamic) {
-        [_mySquare1.physicsBody setDynamic:YES];
+    if (!_head.physicsBody.dynamic) {
+        [_head.physicsBody setDynamic:YES];
     }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (!_mySquare1.physicsBody.dynamic) {
-        [_mySquare1.physicsBody setDynamic:YES];
+    if (!_head.physicsBody.dynamic) {
+        [_head.physicsBody setDynamic:YES];
     }
 }
 

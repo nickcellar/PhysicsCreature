@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "SnakeScene.h"
 
 @implementation ViewController
 
@@ -21,9 +22,9 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [SnakeScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+
     // Present the scene.
     [skView presentScene:scene];
 }

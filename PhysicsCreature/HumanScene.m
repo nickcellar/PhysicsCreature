@@ -31,6 +31,18 @@
     return joint;
 }
 
+- (SKPhysicsJointSpring *)createSprintJointWithNodeA:(SKNode *)nodeA nodeB:(SKNode *)nodeB frequency:(float) frequency
+{
+    SKPhysicsJointSpring *joint = [SKPhysicsJointSpring jointWithBodyA:nodeA.physicsBody
+                                                                 bodyB:nodeB.physicsBody
+                                                               anchorA:nodeA.position
+                                                               anchorB:nodeB.position];
+    [joint setFrequency:frequency];
+    [joint setDamping:.5];
+    [self.physicsWorld addJoint:joint];
+    return joint;
+}
+
 
 - (SKShapeNode *)createNodeWithPosition:(CGPoint)position
 {
@@ -78,6 +90,7 @@
 
 - (void)spawnHuman
 {
+    // nodes
     _head = [self createCircleWithRadius:30 position:CGPointMake(self.size.width / 2, self.size.height / 4 * 3)];
     _waist = [self createNodeWithPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
     _shoulder = [self createNodeWithPosition:CGPointMake(self.size.width / 2, self.size.height / 16 * 11)];
@@ -86,6 +99,7 @@
     _leftFoot = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 3, self.size.height / 4)];
     _rightFoot = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 7, self.size.height / 4)];
 
+    // hard joints
     [self createSprintJointWithNodeA:_head nodeB:_leftHand];
     [self createSprintJointWithNodeA:_head nodeB:_rightHand];
     [self createSprintJointWithNodeA:_head nodeB:_leftFoot];
@@ -96,8 +110,10 @@
     [self createSprintJointWithNodeA:_shoulder nodeB:_rightHand];
     [self createSprintJointWithNodeA:_waist nodeB:_leftFoot];
     [self createSprintJointWithNodeA:_waist nodeB:_rightFoot];
-    [self createSprintJointWithNodeA:_leftHand nodeB:_rightHand];
-    [self createSprintJointWithNodeA:_leftFoot nodeB:_rightFoot];
+
+    // soft joints
+    [self createSprintJointWithNodeA:_leftHand nodeB:_rightHand frequency:.1];
+    [self createSprintJointWithNodeA:_leftFoot nodeB:_rightFoot frequency:.1];
 }
 
 - (id)initWithSize:(CGSize)size

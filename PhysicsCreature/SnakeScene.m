@@ -7,9 +7,11 @@
 //
 
 #import "SnakeScene.h"
+#import "HumanScene.h"
 
 @interface SnakeScene ()
 @property SKShapeNode *head;
+@property SKSpriteNode *button;
 @end
 
 @implementation SnakeScene
@@ -69,6 +71,20 @@
     [self addChild:shelf];
 }
 
+- (void)spawnButtonWithText:(NSString *)text position:(CGPoint)position
+{
+    _button = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor] size:CGSizeMake(140, 40)];
+    [_button setPosition:CGPointMake(position.x, position.y + 8)];
+    [self addChild:_button];
+
+    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Light"];
+    [label setText:text];
+    [label setFontSize:16];
+    [label setFontColor:[UIColor blackColor]];
+    [label setPosition:position];
+    [self addChild:label];
+}
+
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
@@ -77,6 +93,7 @@
         [self.physicsBody setRestitution:.5];
         [self spawnSnake];
         [self spawnShelf];
+        [self spawnButtonWithText:@"Switch To Human" position:CGPointMake(self.size.width - 80, self.size.height - 60)];
     }
     return self;
 }
@@ -104,6 +121,14 @@
 {
     if (!_head.physicsBody.dynamic) {
         [_head.physicsBody setDynamic:YES];
+    }
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        if (CGRectContainsPoint(_button.frame, location)) {
+            SKScene *scene = [HumanScene sceneWithSize:self.view.bounds.size];
+            scene.scaleMode = SKSceneScaleModeAspectFill;
+            [self.view presentScene:scene];
+        }
     }
 }
 

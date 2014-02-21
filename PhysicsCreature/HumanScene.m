@@ -7,6 +7,7 @@
 //
 
 #import "HumanScene.h"
+#import "SnakeScene.h"
 
 @interface HumanScene ()
 @property SKShapeNode *head;
@@ -17,6 +18,7 @@
 @property SKSpriteNode *leftFoot;
 @property SKSpriteNode *rightFoot;
 @property NSMutableArray *lines;
+@property SKSpriteNode *button;
 @end
 
 @implementation HumanScene
@@ -31,7 +33,7 @@
     return joint;
 }
 
-- (SKPhysicsJointSpring *)createSprintJointWithNodeA:(SKNode *)nodeA nodeB:(SKNode *)nodeB frequency:(float) frequency
+- (SKPhysicsJointSpring *)createSprintJointWithNodeA:(SKNode *)nodeA nodeB:(SKNode *)nodeB frequency:(float)frequency
 {
     SKPhysicsJointSpring *joint = [SKPhysicsJointSpring jointWithBodyA:nodeA.physicsBody
                                                                  bodyB:nodeB.physicsBody
@@ -88,6 +90,20 @@
     return path;
 }
 
+- (void)spawnButtonWithText:(NSString *)text position:(CGPoint)position
+{
+    _button = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor] size:CGSizeMake(140, 40)];
+    [_button setPosition:CGPointMake(position.x, position.y + 8)];
+    [self addChild:_button];
+
+    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Light"];
+    [label setText:text];
+    [label setFontSize:16];
+    [label setFontColor:[UIColor blackColor]];
+    [label setPosition:position];
+    [self addChild:label];
+}
+
 - (void)spawnHuman
 {
     // nodes
@@ -123,6 +139,7 @@
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         [self.physicsBody setRestitution:1];
         [self spawnHuman];
+        [self spawnButtonWithText:@"Switch To Snake" position:CGPointMake(self.size.width - 80, self.size.height - 60)];
     }
     return self;
 }
@@ -150,6 +167,14 @@
 {
     if (!_head.physicsBody.dynamic) {
         [_head.physicsBody setDynamic:YES];
+    }
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        if (CGRectContainsPoint(_button.frame, location)) {
+            SKScene *scene = [SnakeScene sceneWithSize:self.view.bounds.size];
+            scene.scaleMode = SKSceneScaleModeAspectFill;
+            [self.view presentScene:scene];
+        }
     }
 }
 

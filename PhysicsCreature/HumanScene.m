@@ -62,7 +62,7 @@
 {
     SKSpriteNode *rectangle = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:size];
     [rectangle setPosition:position];
-    [rectangle setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:_leftHand.size]];
+    [rectangle setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:rectangle.size]];
     [rectangle.physicsBody setRestitution:.75];
     [self addChild:rectangle];
     return rectangle;
@@ -81,7 +81,6 @@
     _head = [self createCircleWithRadius:30 position:CGPointMake(self.size.width / 2, self.size.height / 4 * 3)];
     _waist = [self createNodeWithPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
     _shoulder = [self createNodeWithPosition:CGPointMake(self.size.width / 2, self.size.height / 16 * 11)];
-    _leftHand = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 2, self.size.height / 2)];
     _leftHand = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 2, self.size.height / 2)];
     _rightHand = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 8, self.size.height / 2)];
     _leftFoot = [self createRectangleWithSize:CGSizeMake(15, 15) position:CGPointMake(self.size.width / 10 * 3, self.size.height / 4)];

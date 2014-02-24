@@ -30,13 +30,19 @@
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathAddArc(path, NULL, 0, 0, radius, 0, (float) M_PI * 2, YES);
         [node setPath:path];
-        [node setFillColor:[UIColor blueColor]];
         [node setLineWidth:0];
 
         // calculate the node position
         float y = self.size.height / 4;
         if (lastNode) y = lastNode.position.y + lastRadius + radius + interval;
         [node setPosition:CGPointMake(self.size.width / 4*3, y)];
+
+        // generate random color
+        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+        [node setFillColor:color];
 
         // set up physics body
         [node setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:radius]];
